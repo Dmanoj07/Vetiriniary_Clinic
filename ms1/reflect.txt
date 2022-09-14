@@ -1,0 +1,39 @@
+﻿/*
+*****************************************************************************
+                        Assignment 1 - Milestone 1(reflect)
+
+Full Name  : Manoj Dhami
+Student ID#:121613202
+Email      :mdhami7@myseneca.ca
+Section    :NDD
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+*****************************************************************************
+*/
+
+1. From the core functions library, what function was the most challenging to define and clearly describe the challenge(s) including how you managed to overcome them in the context of the methods used in preparing your logic, debugging, and testing. 
+
+
+Answer: Defining the “strlen()” function was challenging for me. To get the length of a string array, I declare a function called length so that it will be as easier to use as a “strlen()” function; whenever we need to calculate length, we can directly call the function. To get the exact length of a string, I have to use the “for” loop until I find the string terminator ‘\0’. When I get the string terminator, the loop terminates, and  I return the index of the string before the string terminator by adding one as the array always started from the 0th position.
+While developing this function, I forgot that the array index always starts from 0,  and I was getting the length of the array string length less than the original string’s length by 1. So I use the debugger tool to find what value is being returned by my length function. When I knew that I was not returning the position of the string terminator as it is equal to the length of a string, I added one while returning the value of “len.”
+
+
+
+
+
+
+2. It is good practice to initialize variables to a "safe empty state". With respect to variable initialization, what is the difference between assigning 0 and NULL? When do you use one over the other and why? 
+
+
+Answer: Assigning 0 means that the variable has a ZERO value, but Assigning NULL means that the variable does not have a valid value; it has nothing in it. NULL is not considered to be a value. When we want to initialize a pointer and do not know the address, we must initialize it with NULL. While initializing any integer or double variable, we must initialize with 0 as a starting value. In C, if we do not initialize the variables, those variables will store their address by default. While using that variable further in the program will produce errors and give the result we did not expect.
+
+
+3. Your friend (also a beginner programmer) is having difficulty understanding how to manage the "standard input buffer" (particularly when there is residual data). Your friend has read all the course notes, Googled the topic, followed along with course lectures about this topic, but is still struggling with this concept. Describe exactly how you would attempt to help your friend understand this topic? 
+
+
+Answer:  If my friend didn't understand properly, I would explain the buffer clearly and then go with the following example.
+
+
+Let's consider a juice jar as a buffer where we store apple juice for a certain period. When we want to drink juice, we turn the tap on, get some juice from the jar, and leave the rest for further use like "scanf" to get the value from the buffer. If we change our mind and decide to store orange juice in that jar, we empty that jar and keep orange juice in it because if we don't open the jar, we get the remaining liquid until it is finished. So it is better to empty the buffer first if we do not intend to use the data stored in it for further use.
