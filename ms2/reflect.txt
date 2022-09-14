@@ -1,0 +1,53 @@
+﻿/*
+*****************************************************************************
+                        Assignment 1 - Milestone 2(reflect)
+
+Full Name  : Manoj Dhami
+Student ID#:121613202
+Email      :mdhami7@myseneca.ca
+Section    :NDD
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+*****************************************************************************
+*/
+
+1. What factors must you consider when naming a module or library? Why do you think it is a suggested best practice to identify a library's header and source code files using the same name? Give an example from this assignment to support your argument.
+
+
+Ans: While naming the module or library, we should be careful, if its name matches one of the predefined modules or libraries of the C program’s library, name of modules should be written in lower case and consistent names should be used.
+
+It will be easy to figure out what we have included in the header file for different source files. It reduces the code confusion as well as code consistent throughout our program. So, using the same will make it easier to call the header file of a particular source file. For instance:
+My source code file name:
+* core.c
+* Clinic.c
+Their particular header file name is:
+* core.h
+* clinic.h
+
+
+
+
+2. So far, you have created and are maintaining two modules in the development of this application. Why do we have these two modules, and explain why these aren't combined into a single module?
+
+
+Ans: We have created two modules for two different tasks. So that we can narrow down our problems and focus on a specific aspect of our project. Dividing the application into different modules reduces the complexity of the problem as the different module contains the code for the different part which is easy to read and upgrade, and can be used as part of other solution to some other problem.
+
+
+3. Modules are typically split into a header file and an implementation file. What purpose and benefit is there to this division? Refer to the module(s) in this application in your explanation.
+
+
+Ans: While creating modules, we split into a header file to define the prototypes of the function only and in the source file, we implement the functionality of that function. So that we can include the header file name in other modules and able to use the function of the module that we created. For instance, in my code, I have developed two modules “core” and “clinic”. I divided the module core into “core.h” and “core.c”. In core.h I have only created the macros and function prototypes, and use this header file in the “clinic” module. So, now I can easily use any function that I required from the “core” module without redeveloping those functions, which saves my time and makes my code short and easy to read.
+Example:
+In clinic module, clinic.c file, I have included the header file of the “core” module.
+
+
+#include <stdio.h>
+#include<string.h>
+
+
+// include the user library "core" so we can use those functions
+#include "core.h"
+// include the user library "clinic" where the function prototypes are declared
+#include "clinic.h"

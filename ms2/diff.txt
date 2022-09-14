@@ -1,0 +1,14 @@
+In line number 349 of your output:
+The output should be:
+Operation aborted.
+                 ^
+But your output is: 
+Operation aborted
+                  ^
+
+Unmatched character details:
+The character in column 19 is supposed to be:
+  [.] ASCII code(46)
+but you printed
+  [Empty Line] ASCII code(0)
+
